@@ -124,3 +124,50 @@ for x in (car1, boat1, plane1):
   print(x.brand)
   print(x.model)
   x.move()
+
+
+#   Encapsulation
+
+class Student:
+  def __init__(self, name):
+    self.name = name
+    self.__grade = 0
+
+  def set_grade(self, grade):
+    if 0 <= grade <= 100:
+      self.__grade = grade
+    else:
+      print("Grade must be between 0 and 100")
+
+  def get_grade(self):
+    return self.__grade
+
+  def get_status(self):
+    if self.__grade >= 60:
+      return "Passed"
+    else:
+      return "Failed"
+
+student = Student("Emil")
+student.set_grade(85)
+print(student.get_grade())
+print(student.get_status())
+
+print("encapsulation with private attributes")
+
+# Inside the editor, complete the following steps:
+# Create a class ScoreBoard
+# Add an __init__ with a score parameter and store it as a private attribute
+# Add a method called get_score that returns the private score
+# Create an object s1 with a score of 0
+# Print the score of s1
+
+class ScoreBoard:
+    def __init__(self, score):
+        self.__score = score
+
+    def get_score(self):
+        return self.__score
+
+s1 = ScoreBoard(10)
+print(s1.get_score())
